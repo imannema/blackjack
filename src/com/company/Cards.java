@@ -10,6 +10,9 @@ public class Cards {
         this.suit = suit;
     }
 
+    public String getValue(){
+        return value;
+    }
 
     public int addValues(Cards c){
         int value1;
