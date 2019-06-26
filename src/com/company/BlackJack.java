@@ -29,10 +29,11 @@ public class BlackJack {
             System.out.println("You now have: " + handTotal(playersHand));
             System.out.println("Hit or Stay? (h / s)");
             Scanner decision = new Scanner(System.in);
-            if (decision.next().equals("s")) {
+            String input = decision.next();
+            if (input.equals("s")) {
                 dealerOption();
             }
-            if (decision.next().equals("h")) {
+            if (input.equals("h")) {
                 Cards dealt = deck.dealCard();
                 System.out.println("Dealt: " + dealt);
                 playersHand.add(dealt);
@@ -49,7 +50,7 @@ public class BlackJack {
 
     public void dealerOption(){
         System.out.println("Dealer's Cards: " + dealersHand);
-        while(handTotal(dealersHand) < 17){
+        while(handTotal(dealersHand) < 17 && handTotal(playersHand) <= 21){
             Cards dealt = deck.dealCard();
             System.out.println("Dealt: " + dealt);
             dealersHand.add(dealt);
@@ -91,6 +92,7 @@ public class BlackJack {
         }
 
         System.out.println("*************************************************");
+        System.exit(0);
         return;
     }
 
