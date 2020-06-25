@@ -1,45 +1,26 @@
 package com.company;
 
+/* Each card has a suit and a value.
+   This class will get the value of each card and be able to calculate combinations of cards
+ */
 public class Cards {
 
     private String value;
     private String suit;
 
+    //initialize card with a value and a suit
     public Cards(String value, String suit){
         this.value = value;
         this.suit = suit;
     }
 
+    //the value of cards are their numbers, Jacks, Queens and Kings have value 10
+    // Ace has value of 1 or 11 and is calculated in Blackjack.java
     public String getValue(){
+        if(value.equals("J")||value.equals("Q")||value.equals("K")){
+            return "10";
+        }
         return value;
-    }
-
-    public int addValues(Cards c){
-        int value1;
-        int value2;
-        try {
-            value1 = Integer.valueOf(value);
-        }
-        catch (NumberFormatException e){
-            if(value.equals("A")){
-                value1 = 1;
-            }
-            else{
-                value1 = 10;
-            }
-        }
-        try {
-            value2 = Integer.valueOf(c.value);
-        }
-        catch (NumberFormatException e){
-            if(c.value.equals("A")){
-                value2 = 1;
-            }
-            else{
-                value2 = 10;
-            }
-        }
-        return value1 + value2;
     }
 
     @Override
