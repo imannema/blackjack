@@ -1,2 +1,2 @@
 # Blackjack
-Created a virtual blackjack experience, playable through the console, with OOP in Java.
+Created a virtual blackjack experience, playable through the console, in Java using OOP.
